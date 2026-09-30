@@ -34,10 +34,10 @@
 	const tab = ref('products');
 
 	const tabs = [
-		{ id: 'products', name: 'Товары', icon: '📦' },
-		{ id: 'customers', name: 'Покупатели', icon: '👥' },
-		{ id: 'employees', name: 'Сотрудники', icon: '🧑‍💼' },
-		{ id: 'suppliers', name: 'Поставщики', icon: '🚚' },
+		{ id: 'products', name: 'Товары' },
+		{ id: 'customers', name: 'Покупатели' },
+		{ id: 'employees', name: 'Сотрудники' },
+		{ id: 'suppliers', name: 'Поставщики' },
 	];
 </script>
 
