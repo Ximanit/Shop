@@ -99,15 +99,21 @@
 	});
 
 	const load = async () => {
-		const res = await axios.get('/api/customers');
+		const res = await axios.get('https://shop-nyf7.onrender.com/api/customers');
 		items.value = res.data;
 	};
 
 	const save = async () => {
 		if (editId.value) {
-			await axios.put(`/api/customers/${editId.value}`, form.value);
+			await axios.put(
+				`https://shop-nyf7.onrender.com/api/customers/${editId.value}`,
+				form.value,
+			);
 		} else {
-			await axios.post('/api/customers', form.value);
+			await axios.post(
+				'https://shop-nyf7.onrender.com/api/customers',
+				form.value,
+			);
 		}
 		cancel();
 		load();
@@ -132,7 +138,7 @@
 
 	const remove = async (id) => {
 		if (confirm('Удалить этого покупателя?')) {
-			await axios.delete(`/api/customers/${id}`);
+			await axios.delete(`https://shop-nyf7.onrender.com/api/customers/${id}`);
 			load();
 		}
 	};

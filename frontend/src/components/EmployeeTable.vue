@@ -92,15 +92,15 @@
 	});
 
 	const load = async () => {
-		const res = await axios.get('/api/employees');
+		const res = await axios.get('https://shop-nyf7.onrender.com/api/employees');
 		items.value = res.data;
 	};
 
 	const save = async () => {
 		if (editId.value) {
-			await axios.put(`/api/employees/${editId.value}`, form.value);
+			await axios.put(`https://shop-nyf7.onrender.com/api/employees/${editId.value}`, form.value);
 		} else {
-			await axios.post('/api/employees', form.value);
+			await axios.post('https://shop-nyf7.onrender.com/api/employees', form.value);
 		}
 		cancel();
 		load();
@@ -124,7 +124,7 @@
 
 	const remove = async (id) => {
 		if (confirm('Удалить этого сотрудника?')) {
-			await axios.delete(`/api/employees/${id}`);
+			await axios.delete(`https://shop-nyf7.onrender.com/api/employees/${id}`);
 			load();
 		}
 	};

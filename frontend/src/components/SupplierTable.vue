@@ -87,15 +87,21 @@
 	});
 
 	const load = async () => {
-		const res = await axios.get('/api/suppliers');
+		const res = await axios.get('https://shop-nyf7.onrender.com/api/suppliers');
 		items.value = res.data;
 	};
 
 	const save = async () => {
 		if (editId.value) {
-			await axios.put(`/api/suppliers/${editId.value}`, form.value);
+			await axios.put(
+				`https://shop-nyf7.onrender.com/api/suppliers/${editId.value}`,
+				form.value,
+			);
 		} else {
-			await axios.post('/api/suppliers', form.value);
+			await axios.post(
+				'https://shop-nyf7.onrender.com/api/suppliers',
+				form.value,
+			);
 		}
 		cancel();
 		load();
@@ -118,7 +124,7 @@
 
 	const remove = async (id) => {
 		if (confirm('Удалить этого поставщика?')) {
-			await axios.delete(`/api/suppliers/${id}`);
+			await axios.delete(`https://shop-nyf7.onrender.com/api/suppliers/${id}`);
 			load();
 		}
 	};

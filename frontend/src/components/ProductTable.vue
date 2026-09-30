@@ -125,15 +125,21 @@
 	});
 
 	const load = async () => {
-		const res = await axios.get('/api/products');
+		const res = await axios.get('https://shop-nyf7.onrender.com/api/products');
 		items.value = res.data;
 	};
 
 	const save = async () => {
 		if (editId.value) {
-			await axios.put(`/api/products/${editId.value}`, form.value);
+			await axios.put(
+				`https://shop-nyf7.onrender.com/api/products/${editId.value}`,
+				form.value,
+			);
 		} else {
-			await axios.post('/api/products', form.value);
+			await axios.post(
+				'https://shop-nyf7.onrender.com/api/products',
+				form.value,
+			);
 		}
 		cancel();
 		load();
@@ -160,7 +166,7 @@
 
 	const remove = async (id) => {
 		if (confirm('Удалить этот товар?')) {
-			await axios.delete(`/api/products/${id}`);
+			await axios.delete(`https://shop-nyf7.onrender.com/api/products/${id}`);
 			load();
 		}
 	};
