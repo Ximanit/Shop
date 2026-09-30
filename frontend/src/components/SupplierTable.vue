@@ -56,11 +56,15 @@
 							<button
 								class="btn-icon edit"
 								@click="edit(item)"
-								title="Изменить"></button>
+								title="Изменить">
+								✏️
+							</button>
 							<button
 								class="btn-icon delete"
 								@click="remove(item.idПоставщик)"
-								title="Удалить"></button>
+								title="Удалить">
+								🗑️
+							</button>
 						</td>
 					</tr>
 				</tbody>
