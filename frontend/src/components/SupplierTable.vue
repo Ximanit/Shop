@@ -1,7 +1,7 @@
 <template>
 	<div class="entity">
 		<div class="entity-header">
-			<h2>🚚 Поставщики</h2>
+			<h2>Поставщики</h2>
 			<button class="btn btn-primary" @click="showForm = !showForm">
 				{{ showForm ? 'Скрыть форму' : '+ Добавить поставщика' }}
 			</button>
@@ -56,15 +56,11 @@
 							<button
 								class="btn-icon edit"
 								@click="edit(item)"
-								title="Изменить">
-								✏️
-							</button>
+								title="Изменить"></button>
 							<button
 								class="btn-icon delete"
 								@click="remove(item.idПоставщик)"
-								title="Удалить">
-								🗑️
-							</button>
+								title="Удалить"></button>
 						</td>
 					</tr>
 				</tbody>

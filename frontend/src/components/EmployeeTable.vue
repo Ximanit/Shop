@@ -1,7 +1,7 @@
 <template>
 	<div class="entity">
 		<div class="entity-header">
-			<h2>🧑‍💼 Сотрудники</h2>
+			<h2>Сотрудники</h2>
 			<button class="btn btn-primary" @click="showForm = !showForm">
 				{{ showForm ? 'Скрыть форму' : '+ Добавить сотрудника' }}
 			</button>
@@ -60,15 +60,11 @@
 							<button
 								class="btn-icon edit"
 								@click="edit(item)"
-								title="Изменить">
-								✏️
-							</button>
+								title="Изменить"></button>
 							<button
 								class="btn-icon delete"
 								@click="remove(item.idСотрудник)"
-								title="Удалить">
-								🗑️
-							</button>
+								title="Удалить"></button>
 						</td>
 					</tr>
 				</tbody>
@@ -98,9 +94,15 @@
 
 	const save = async () => {
 		if (editId.value) {
-			await axios.put(`https://shop-nyf7.onrender.com/api/employees/${editId.value}`, form.value);
+			await axios.put(
+				`https://shop-nyf7.onrender.com/api/employees/${editId.value}`,
+				form.value,
+			);
 		} else {
-			await axios.post('https://shop-nyf7.onrender.com/api/employees', form.value);
+			await axios.post(
+				'https://shop-nyf7.onrender.com/api/employees',
+				form.value,
+			);
 		}
 		cancel();
 		load();
