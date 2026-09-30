@@ -17,11 +17,11 @@ const pool = new Pool({
 pool
 	.connect()
 	.then((client) => {
-		console.log('✅ Успешно подключились к PostgreSQL (Render)');
+		console.log('Успешно подключились к PostgreSQL (Render)');
 		client.release();
 	})
 	.catch((err) => {
-		console.error('❌ Ошибка подключения к PostgreSQL:', err.message);
+		console.error('Ошибка подключения к PostgreSQL:', err.message);
 	});
 
 export default pool;
